@@ -8,13 +8,13 @@ from primepackage import*
 def main():
     """Generate 100 prime numbers and output it into output.csv file
     """
-    primes = getNPrime(100)
+    primes = get_n_prime(100)
 
     write_primes(primes, 'output.csv')
 
-    l = read_primes('output.csv')
+    nums = read_primes('output.csv')
 
-    print(l)
+    print(nums)
 
-if __name__== '__main__':
+if __name__ == '__main__':
     main()

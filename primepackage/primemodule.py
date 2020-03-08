@@ -2,29 +2,30 @@
 """Contains the functions that will check if a number is prime and
 another that will find the first n primes and put them in a list."""
 
-def isPrime(n):
-    """Checks if a number is prime, returning a boolean."""
-    if (n == 2):
+def is_prime(num):
+    """Determines if the supplied number is prime, returning True or False."""
+    if num == 2:
         return True
 
-    for i in range(2, n):
-        if (n % i == 0):
+    numbers = range(2, num)
+
+    for i in numbers:
+        if num % i == 0:
             return False
+
     return True
 
-def getNPrime(num):
+def get_n_prime(num):
     """Returns the first n primes."""
     count = 0
     number = 2
-    primes = list(range(num))
-    while (count < num):
-        if (isPrime(number)):
-            primes[count] = number
+    primes = []
+    while count < num:
+        if is_prime(number):
+            primes.append(number)
             count = count + 1
-            if (number == 2):
-                number = number + 1
-            else:
-                number = number + 2
-    print(list)
-
-getNPrime(5)
+        if number == 2:
+            number = number + 1
+        else:
+            number = number + 2
+    return primes

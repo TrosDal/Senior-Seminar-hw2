@@ -1,9 +1,34 @@
 #!/usr/bin/python
 """Contains the functions that will check if a number is prime and
-another that will find the first n primes and put them in a list."""
+another that will find the first n primes.
+
+This module contains the function "is_prime", which returns true
+if the supplied number is prime and false otherwise.
+It also contains the function "get_n_prime", whic hreturns the first n
+prime numbers, using "is_prime" to check.
+"""
+
+__author__ = "Rene Zambrana"
+__license__ = "GPL"
+__version__ = "0.1"
+__email__ = "rxzambrana@valdosta.edu"
+__status__ = "Prototype"
 
 def is_prime(num):
-    """Determines if the supplied number is prime, returning True or False."""
+    """Determines if the supplied number is prime, returning True or False.
+
+    Args:
+        num (int): integer to be checked.
+
+    Returns:
+        boolean: True if prime, False if not.
+
+    Raises:
+        inputMismatchException: When a non-integer value is supplied.
+
+    Examples:
+        >>>> check = is_prime(77);
+    """
     if num == 2:
         return True
 
@@ -16,7 +41,20 @@ def is_prime(num):
     return True
 
 def get_n_prime(num):
-    """Returns the first n primes."""
+    """Returns the first n primes, using "is_prime" to check for primeness.
+
+    Args:
+        num (int): number of primes to be added to the returned list.
+
+    Returns:
+        list (int): Returns a list of the first "num" prime integers.
+
+    Raises:
+        inputMismatchException: When a non-integer value is supplied.
+
+    Examples:
+        >>>> primes = get_n_prime(20);
+    """
     count = 0
     number = 2
     primes = []

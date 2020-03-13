@@ -10,7 +10,9 @@ def isPrime(n):
     for i in range(2, n):
         if (n % i == 0):
             return False
-    return True
+            break
+    else:
+        return True
 
 def getNPrime(num):
     """Returns the first n primes."""
@@ -25,6 +27,6 @@ def getNPrime(num):
                 number = number + 1
             else:
                 number = number + 2
-    print(list)
+    print(primes)
 
 getNPrime(5)

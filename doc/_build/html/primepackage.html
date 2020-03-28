@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>primepackage package &#8212; Prime  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="generate module" href="generate.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="generate.html" title="generate module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Prime  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">Prime</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="primepackage-package">
+<h1>primepackage package<a class="headerlink" href="#primepackage-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-primepackage.primeio">
+<span id="primepackage-primeio-module"></span><h2>primepackage.primeio module<a class="headerlink" href="#module-primepackage.primeio" title="Permalink to this headline">¶</a></h2>
+<p>This module creates csv files of prime numbers,
+and reads prime numbers from csv files.</p>
+<p>This module contains the functions “write_primes”,
+which writes a list of prime numbers to a file,
+and “read_primes” which reads numbers from a csv file
+and places them into a list.</p>
+<dl class="function">
+<dt id="primepackage.primeio.read_primes">
+<code class="sig-prename descclassname">primepackage.primeio.</code><code class="sig-name descname">read_primes</code><span class="sig-paren">(</span><em class="sig-param">file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#primepackage.primeio.read_primes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads prime numbers from a csv file and places them into a list,
+which it returns.</p>
+<p>The read_primes function accepts a file name and
+returns a list of the integers found in that file.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_name (str): name of the input file.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list (int): Returns a list of numbers read from the file.</p>
+</dd>
+<dt>Raises:</dt><dd><p>inputMismatchException: When an incorrect value is supplied.
+IOError: io error for when a file can’t be opened/created.</p>
+</dd>
+<dt>Examples:</dt><dd><p>&gt;&gt;&gt;&gt; read_primes(“primes.csv”);</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="primepackage.primeio.write_primes">
+<code class="sig-prename descclassname">primepackage.primeio.</code><code class="sig-name descname">write_primes</code><span class="sig-paren">(</span><em class="sig-param">num_list</em>, <em class="sig-param">file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#primepackage.primeio.write_primes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a list of prime numbers and writes them to a csv file.</p>
+<p>The write_primes function accepts a list of prime numbers and a
+file name and writes the primes to a file with the given name.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>num_list (int): list integers to be written to file.
+file_name (str): desired name of the output file.</p>
+</dd>
+<dt>Returns:</dt><dd><p>void: it creates an output file, but does not return anything.</p>
+</dd>
+<dt>Raises:</dt><dd><p>inputMismatchException: When an incorrect value is supplied.
+IOError: io error for when a file can’t be opened/created.</p>
+</dd>
+<dt>Examples:</dt><dd><p>&gt;&gt;&gt;&gt; write_primes(prime_list, “primes.csv”);
+&gt;&gt;&gt;&gt; write_primes([2,3,5,7,11], “primes.csv”);</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-primepackage.primemodule">
+<span id="primepackage-primemodule-module"></span><h2>primepackage.primemodule module<a class="headerlink" href="#module-primepackage.primemodule" title="Permalink to this headline">¶</a></h2>
+<p>Contains the functions that will check if a number is prime and
+another that will find the first n primes.</p>
+<p>This module contains the function “is_prime”, which returns true
+if the supplied number is prime and false otherwise.
+It also contains the function “get_n_prime”, whic hreturns the first n
+prime numbers, using “is_prime” to check.</p>
+<dl class="function">
+<dt id="primepackage.primemodule.get_n_prime">
+<code class="sig-prename descclassname">primepackage.primemodule.</code><code class="sig-name descname">get_n_prime</code><span class="sig-paren">(</span><em class="sig-param">num</em><span class="sig-paren">)</span><a class="headerlink" href="#primepackage.primemodule.get_n_prime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first n primes, using “is_prime” to check for primeness.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>num (int): number of primes to be added to the returned list.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list (int): Returns a list of the first “num” prime integers.</p>
+</dd>
+<dt>Raises:</dt><dd><p>inputMismatchException: When a non-integer value is supplied.</p>
+</dd>
+<dt>Examples:</dt><dd><p>&gt;&gt;&gt;&gt; primes = get_n_prime(20);</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="primepackage.primemodule.is_prime">
+<code class="sig-prename descclassname">primepackage.primemodule.</code><code class="sig-name descname">is_prime</code><span class="sig-paren">(</span><em class="sig-param">num</em><span class="sig-paren">)</span><a class="headerlink" href="#primepackage.primemodule.is_prime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines if the supplied number is prime, returning True or False.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>num (int): integer to be checked.</p>
+</dd>
+<dt>Returns:</dt><dd><p>boolean: True if prime, False if not.</p>
+</dd>
+<dt>Raises:</dt><dd><p>inputMismatchException: When a non-integer value is supplied.</p>
+</dd>
+<dt>Examples:</dt><dd><p>&gt;&gt;&gt;&gt; check = is_prime(77);</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-primepackage">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-primepackage" title="Permalink to this headline">¶</a></h2>
+<p>This module determines what gets imported on a * import call.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">primepackage package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-primepackage.primeio">primepackage.primeio module</a></li>
+<li><a class="reference internal" href="#module-primepackage.primemodule">primepackage.primemodule module</a></li>
+<li><a class="reference internal" href="#module-primepackage">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="generate.html"
+                        title="previous chapter">generate module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/primepackage.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="generate.html" title="generate module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Prime  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >Prime</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Rene Zambrana.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+    </div>
+  </body>
+</html>

@@ -6,6 +6,7 @@ This module contains the function "is_prime", which returns true
 if the supplied number is prime and false otherwise.
 It also contains the function "get_n_prime", whic hreturns the first n
 prime numbers, using "is_prime" to check.
+
 """
 
 __author__ = "Rene Zambrana"
@@ -28,6 +29,7 @@ def is_prime(num):
 
     Examples:
         >>>> check = is_prime(77);
+        
     """
     if num == 2:
         return True

@@ -65,8 +65,7 @@ returns a list of the integers found in that file.</p>
 </dd>
 <dt>Returns:</dt><dd><p>list (int): Returns a list of numbers read from the file.</p>
 </dd>
-<dt>Raises:</dt><dd><p>inputMismatchException: When an incorrect value is supplied.
-IOError: io error for when a file can’t be opened/created.</p>
+<dt>Raises:</dt><dd><p>IOError: When a file can’t be found/read.</p>
 </dd>
 <dt>Examples:</dt><dd><p>&gt;&gt;&gt;&gt; read_primes(“primes.csv”);</p>
 </dd>
@@ -80,12 +79,12 @@ IOError: io error for when a file can’t be opened/created.</p>
 <p>The write_primes function accepts a list of prime numbers and a
 file name and writes the primes to a file with the given name.</p>
 <dl class="simple">
-<dt>Args:</dt><dd><p>num_list (int): list integers to be written to file.
+<dt>Args:</dt><dd><p>num_list (int): list of integers to be written to a file.
 file_name (str): desired name of the output file.</p>
 </dd>
 <dt>Returns:</dt><dd><p>void: it creates an output file, but does not return anything.</p>
 </dd>
-<dt>Raises:</dt><dd><p>inputMismatchException: When an incorrect value is supplied.
+<dt>Raises:</dt><dd><p>TypeError: When an incorrect type of value is supplied.
 IOError: io error for when a file can’t be opened/created.</p>
 </dd>
 <dt>Examples:</dt><dd><p>&gt;&gt;&gt;&gt; write_primes(prime_list, “primes.csv”);
@@ -112,7 +111,8 @@ prime numbers, using “is_prime” to check.</p>
 </dd>
 <dt>Returns:</dt><dd><p>list (int): Returns a list of the first “num” prime integers.</p>
 </dd>
-<dt>Raises:</dt><dd><p>inputMismatchException: When a non-integer value is supplied.</p>
+<dt>Raises:</dt><dd><p>ValueError: When an integer less than 1 is supplied.
+TypeError: When a non-intger value is supplied.</p>
 </dd>
 <dt>Examples:</dt><dd><p>&gt;&gt;&gt;&gt; primes = get_n_prime(20);</p>
 </dd>
@@ -128,7 +128,7 @@ prime numbers, using “is_prime” to check.</p>
 </dd>
 <dt>Returns:</dt><dd><p>boolean: True if prime, False if not.</p>
 </dd>
-<dt>Raises:</dt><dd><p>inputMismatchException: When a non-integer value is supplied.</p>
+<dt>Raises:</dt><dd><p>TypeError: When a non-integer value is supplied.</p>
 </dd>
 <dt>Examples:</dt><dd><p>&gt;&gt;&gt;&gt; check = is_prime(77);</p>
 </dd>

@@ -23,14 +23,14 @@ def write_primes(num_list, file_name):
     file name and writes the primes to a file with the given name.
 
     Args:
-        num_list (int): list integers to be written to file.
+        num_list (int): list of integers to be written to a file.
         file_name (str): desired name of the output file.
 
     Returns:
         void: it creates an output file, but does not return anything.
 
     Raises:
-        inputMismatchException: When an incorrect value is supplied.
+        TypeError: When an incorrect type of value is supplied.
         IOError: io error for when a file can't be opened/created.
 
     Examples:
@@ -39,6 +39,9 @@ def write_primes(num_list, file_name):
     """
     with open(file_name, 'w', newline='') as p_file:
         file_writer = csv.writer(p_file)
+
+        if file_writer is None:
+            raise IOError('File could not be written to.')
 
         file_writer.writerow(num_list)
 
@@ -58,14 +61,17 @@ def read_primes(file_name):
         list (int): Returns a list of numbers read from the file.
 
     Raises:
-        inputMismatchException: When an incorrect value is supplied.
-        IOError: io error for when a file can't be opened/created.
+        IOError: When a file can't be found/read.
 
     Examples:
         >>>> read_primes("primes.csv");
     """
     csv_file = open(file_name, 'r', newline='')
+
+    if csv_file is None:
+        raise IOError('File could not be read from.')
+
     file_read = csv.reader(csv_file)
-    
+
     for num in file_read:
         return num

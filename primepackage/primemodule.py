@@ -24,11 +24,14 @@ def is_prime(num):
         boolean: True if prime, False if not.
 
     Raises:
-        inputMismatchException: When a non-integer value is supplied.
+        TypeError: When a non-integer value is supplied.
 
     Examples:
         >>>> check = is_prime(77);
     """
+    if num <= 0:
+        raise ValueError('Number being checked for prime-ness must be positive.')
+
     if num == 2:
         return True
 
@@ -50,11 +53,13 @@ def get_n_prime(num):
         list (int): Returns a list of the first "num" prime integers.
 
     Raises:
-        inputMismatchException: When a non-integer value is supplied.
-
+        ValueError: When an integer less than 1 is supplied.
+        TypeError: When a non-intger value is supplied.
     Examples:
         >>>> primes = get_n_prime(20);
     """
+    if num < 0:
+        raise ValueError('Error: the number of primes to be returned must be non-negative.')
     count = 0
     number = 2
     primes = []
